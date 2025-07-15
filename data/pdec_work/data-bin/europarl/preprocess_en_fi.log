@@ -1,0 +1,33 @@
+2025-06-05 17:24:41 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:24:42 | INFO | fairseq_cli.preprocess | Namespace(aim_repo=None, aim_run_hash=None, align_suffix=None, alignfile=None, all_gather_list_size=16384, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, azureml_logging=False, bf16=False, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='C:\\Users\\33491\\PycharmProjects\\machine\\fairseq\\models\\ZeroTrans\\europarl_scripts\\build_data\\europarl_15-bin', dict_only=False, empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_file=None, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, on_cpu_convert_precision=False, only_source=False, optimizer=None, padding_factor=1, plasma_path='/tmp/plasma', profile=False, quantization_config_path=None, reset_logging=False, scoring='bleu', seed=1, source_lang='en', srcdict='C:\\Users\\33491\\PycharmProjects\\machine\\fairseq\\models\\ZeroTrans\\europarl_scripts\\build_data\\europarl_15-bin/dict.txt', suppress_crashes=False, target_lang='fi', task='translation', tensorboard_logdir=None, testpref='C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/test.en_fi', tgtdict='C:\\Users\\33491\\PycharmProjects\\machine\\fairseq\\models\\ZeroTrans\\europarl_scripts\\build_data\\europarl_15-bin/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/train.en_fi', use_plasma_view=False, user_dir=None, validpref='C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/valid.en_fi', wandb_project=None, workers=4)
+2025-06-05 17:24:43 | INFO | fairseq_cli.preprocess | [en] Dictionary: 50001 types
+2025-06-05 17:24:53 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:24:53 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:24:53 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:25:28 | INFO | fairseq_cli.preprocess | [en] C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/train.en_fi.en: 185310 sents, 6655723 tokens, 1.5e-05% replaced (by <unk>)
+2025-06-05 17:25:28 | INFO | fairseq_cli.preprocess | [en] Dictionary: 50001 types
+2025-06-05 17:25:38 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:25:39 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:25:39 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:25:42 | INFO | fairseq_cli.preprocess | [en] C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/valid.en_fi.en: 2000 sents, 71569 tokens, 0.0% replaced (by <unk>)
+2025-06-05 17:25:42 | INFO | fairseq_cli.preprocess | [en] Dictionary: 50001 types
+2025-06-05 17:25:52 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:25:53 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:25:53 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:25:56 | INFO | fairseq_cli.preprocess | [en] C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/test.en_fi.en: 2000 sents, 72236 tokens, 0.0% replaced (by <unk>)
+2025-06-05 17:25:56 | INFO | fairseq_cli.preprocess | [fi] Dictionary: 50001 types
+2025-06-05 17:26:07 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:26:08 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:26:08 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:26:43 | INFO | fairseq_cli.preprocess | [fi] C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/train.en_fi.fi: 185310 sents, 6606097 tokens, 1.51e-05% replaced (by <unk>)
+2025-06-05 17:26:43 | INFO | fairseq_cli.preprocess | [fi] Dictionary: 50001 types
+2025-06-05 17:26:54 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:26:54 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:26:54 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:26:58 | INFO | fairseq_cli.preprocess | [fi] C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/valid.en_fi.fi: 2000 sents, 71112 tokens, 0.0% replaced (by <unk>)
+2025-06-05 17:26:58 | INFO | fairseq_cli.preprocess | [fi] Dictionary: 50001 types
+2025-06-05 17:27:08 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:27:08 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:27:08 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 17:27:11 | INFO | fairseq_cli.preprocess | [fi] C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/test.en_fi.fi: 2000 sents, 71754 tokens, 0.0% replaced (by <unk>)
+2025-06-05 17:27:11 | INFO | fairseq_cli.preprocess | Wrote preprocessed data to C:\Users\33491\PycharmProjects\machine\fairseq\models\ZeroTrans\europarl_scripts\build_data\europarl_15-bin

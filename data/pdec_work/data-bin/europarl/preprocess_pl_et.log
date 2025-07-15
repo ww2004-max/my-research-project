@@ -1,0 +1,24 @@
+2025-06-05 19:08:17 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2025-06-05 19:08:18 | INFO | fairseq_cli.preprocess | Namespace(aim_repo=None, aim_run_hash=None, align_suffix=None, alignfile=None, all_gather_list_size=16384, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, azureml_logging=False, bf16=False, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='C:\\Users\\33491\\PycharmProjects\\machine\\fairseq\\models\\ZeroTrans\\europarl_scripts\\build_data\\europarl_15-bin', dict_only=False, empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_file=None, log_format=None, log_interval=100, lr_scheduler='fixed', memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, model_parallel_size=1, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, on_cpu_convert_precision=False, only_source=False, optimizer=None, padding_factor=1, plasma_path='/tmp/plasma', profile=False, quantization_config_path=None, reset_logging=False, scoring='bleu', seed=1, source_lang='pl', srcdict='C:\\Users\\33491\\PycharmProjects\\machine\\fairseq\\models\\ZeroTrans\\europarl_scripts\\build_data\\europarl_15-bin/dict.txt', suppress_crashes=False, target_lang='et', task='translation', tensorboard_logdir=None, testpref='C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/test.pl_et', tgtdict='C:\\Users\\33491\\PycharmProjects\\machine\\fairseq\\models\\ZeroTrans\\europarl_scripts\\build_data\\europarl_15-bin/dict.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, tpu=False, trainpref='C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/train.pl_et', use_plasma_view=False, user_dir=None, validpref='C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/valid.pl_et', wandb_project=None, workers=4)
+2025-06-05 19:08:18 | INFO | fairseq_cli.preprocess | [pl] Dictionary: 50001 types
+Traceback (most recent call last):
+  File "C:\Python38\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Python38\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Python38\Scripts\fairseq-preprocess.exe\__main__.py", line 7, in <module>
+  File "C:\Users\33491\PycharmProjects\fairseq\fairseq_cli\preprocess.py", line 389, in cli_main
+    main(args)
+  File "C:\Users\33491\PycharmProjects\fairseq\fairseq_cli\preprocess.py", line 372, in main
+    _make_all(args.source_lang, src_dict, args)
+  File "C:\Users\33491\PycharmProjects\fairseq\fairseq_cli\preprocess.py", line 185, in _make_all
+    _make_dataset(
+  File "C:\Users\33491\PycharmProjects\fairseq\fairseq_cli\preprocess.py", line 178, in _make_dataset
+    _make_binary_dataset(
+  File "C:\Users\33491\PycharmProjects\fairseq\fairseq_cli\preprocess.py", line 119, in _make_binary_dataset
+    final_summary = FileBinarizer.multiprocess_dataset(
+  File "C:\Users\33491\PycharmProjects\fairseq\fairseq\binarizer.py", line 100, in multiprocess_dataset
+    offsets = find_offsets(input_file, num_workers)
+  File "C:\Users\33491\PycharmProjects\fairseq\fairseq\file_chunker_utils.py", line 25, in find_offsets
+    with open(filename, "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/33491/PycharmProjects/machine/fairseq/models/ZeroTrans/europarl_scripts/build_data/bpe/train.pl_et.pl'
