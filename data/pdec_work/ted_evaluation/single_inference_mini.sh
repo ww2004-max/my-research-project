@@ -1,0 +1,96 @@
+#!/bin/bash
+
+METHOD=${1}
+ID=${2}
+src=${3}
+tgt=${4}
+gpu_id=${5}
+ROOT_PATH=${6}
+DATA_BIN=${7}
+WORK_PATH=${ROOT_PATH}/pdec_work
+SAVE_PATH=${WORK_PATH}/results
+DETOKENIZER=${ROOT_PATH}/moses/scripts/tokenizer/detokenizer.perl
+
+cd ${ROOT_PATH}/fairseq  # 修正为fairseq而不是fairseqirseq
+
+# 设置Python环境变量，强制使用UTF-8编码
+export PYTHONIOENCODING=utf-8
+
+DIR=""
+task='translation_multi_simple_epoch'
+if [ $METHOD == 'ted_pdec_mini' ];then
+  DIR="--user-dir ${ROOT_PATH}/pdec_work/models/PhasedDecoder_ted"
+fi
+
+tgt_file=$src"-"$tgt".raw.txt"
+echo "正在处理语言对 $src-$tgt..."
+
+# 使用特定的Python环境
+PYTHON_CMD="/d/conda_envs/YOLOV11/python.exe"  # 使用YOLOV11环境中的Python
+
+# 检查检查点文件是否存在
+CHECKPOINT_FILE=$WORK_PATH/checkpoints/$METHOD/$ID/checkpoint_averaged.pt
+if [ ! -f "$CHECKPOINT_FILE" ]; then
+    echo "错误: 检查点文件不存在: $CHECKPOINT_FILE"
+    exit 1
+fi
+
+# 执行推理命令
+echo "执行推理命令..."
+$PYTHON_CMD -m fairseq_cli.generate $DATA_BIN \
+$DIR \
+-s $src -t $tgt \
+--langs "en,de,es,it" \
+--lang-pairs "en-de,de-en,en-es,es-en,en-it,it-en" \
+--path $CHECKPOINT_FILE \
+--remove-bpe sentencepiece \
+--required-batch-size-multiple 1 \
+--task $task \
+--encoder-langtok tgt \
+--beam 4 > $SAVE_PATH/$METHOD/$ID/$tgt_file
+
+# 检查推理结果是否生成
+if [ ! -f "$SAVE_PATH/$METHOD/$ID/$tgt_file" ]; then
+    echo "错误: 推理结果文件未生成"
+    exit 1
+fi
+
+echo "提取假设、参考和源文本..."
+# hypothesis
+cat $SAVE_PATH/$METHOD/$ID/$tgt_file | grep -P "^H" | sort -t '-' -k2n | cut -f 3- > $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".h"
+# reference
+cat $SAVE_PATH/$METHOD/$ID/$tgt_file | grep -P "^T" | sort -t '-' -k2n | cut -f 2- > $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".r"
+# source
+cat $SAVE_PATH/$METHOD/$ID/$tgt_file | grep -P "^S" | sort -t '-' -k2n | cut -f 2- | sed 's/__[a-zA-Z_]*__ //' > $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".s"
+rm $SAVE_PATH/$METHOD/$ID/$tgt_file
+
+echo "进行detokenize处理..."
+cat $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".h" | perl ${DETOKENIZER} -threads 32 -l $tgt >> $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".detok.h"
+cat $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".r" | perl ${DETOKENIZER} -threads 32 -l $tgt >> $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".detok.r"
+cat $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".s" | perl ${DETOKENIZER} -threads 32 -l $src >> $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".detok.s"
+rm $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".h"
+rm $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".r"
+rm $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".s"
+
+TOK='13a'
+if [ $tgt == 'zh' ];then
+    TOK='zh'
+fi
+if [ $tgt == 'ja' ];then
+    TOK='ja-mecab'
+fi
+if [ $tgt == 'ko' ];then
+    TOK='ko-mecab'
+fi
+
+echo "计算评估指标..."
+# 使用特定的Python环境运行sacrebleu
+$PYTHON_CMD -m sacrebleu $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".detok.h" -w 4 -tok $TOK < $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".detok.r" > $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".bleu
+echo $src"-"$tgt >> $SAVE_PATH/$METHOD/$ID/$ID".sacrebleu"
+cat $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".bleu" >> $SAVE_PATH/$METHOD/$ID/$ID".sacrebleu"
+
+$PYTHON_CMD -m sacrebleu $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".detok.h" -w 4 -m chrf --chrf-word-order 2 < $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".detok.r" > $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".chrf
+echo $src"-"$tgt >> $SAVE_PATH/$METHOD/$ID/$ID".chrf"
+cat $SAVE_PATH/$METHOD/$ID/$src"-"$tgt".chrf" >> $SAVE_PATH/$METHOD/$ID/$ID".chrf"
+
+echo "语言对 $src-$tgt 处理完成"

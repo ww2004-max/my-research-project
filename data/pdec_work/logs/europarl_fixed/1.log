@@ -1,0 +1,45 @@
+=== 修复后的Europarl训练日志 ===
+语言对: de-en, es-en, it-en
+开始时间: 2025-06-14 21:50:39
+==================================================
+2025-06-14 21:50:41 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+Traceback (most recent call last):
+  File "C:\Users\33491\PycharmProjects\machine\fairseq\fairseq\utils.py", line 504, in import_user_module
+    importlib.import_module(module_name)
+  File "D:\conda_envs\YOLOV11\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'PhasedDecoder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\33491\PycharmProjects\machine\fairseq\fairseq\utils.py", line 516, in import_user_module
+    importlib.import_module(relative_module_path)
+  File "D:\conda_envs\YOLOV11\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'models\\PhasedDecoder'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\conda_envs\YOLOV11\lib\runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\conda_envs\YOLOV11\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\33491\PycharmProjects\machine\fairseq\fairseq_cli\train.py", line 581, in <module>
+    cli_main()
+  File "C:\Users\33491\PycharmProjects\machine\fairseq\fairseq_cli\train.py", line 558, in cli_main
+    parser = options.get_training_parser()
+  File "C:\Users\33491\PycharmProjects\machine\fairseq\fairseq\options.py", line 38, in get_training_parser
+    parser = get_parser("Trainer", default_task)
+  File "C:\Users\33491\PycharmProjects\machine\fairseq\fairseq\options.py", line 234, in get_parser
+    utils.import_user_module(usr_args)
+  File "C:\Users\33491\PycharmProjects\machine\fairseq\fairseq\utils.py", line 522, in import_user_module
+    raise FileNotFoundError(module_path)
+FileNotFoundError: C:/Users/33491/PycharmProjects/machine\fairseq\models\PhasedDecoder

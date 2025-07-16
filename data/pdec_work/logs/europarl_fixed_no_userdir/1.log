@@ -1,0 +1,5 @@
+=== 修复后的Europarl训练日志（无user-dir版本） ===
+语言对: de-en, es-en, it-en
+开始时间: 2025-06-14 21:57:43
+PhasedDecoder路径: C:\Users\33491\PycharmProjects\machine\fairseq\models\PhasedDecoder
+==================================================

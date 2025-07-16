@@ -1,0 +1,93 @@
+TRAIN
+Language: bn
+Total lines:  45600
+Total words:  647118
+Unique words:  51235
+Average line length in corpus is  14
+Language: en
+Total lines:  45600
+Total words:  781117
+Unique words:  35295
+Average line length in corpus is  17
+Language: mr
+Total lines:  45600
+Total words:  601356
+Unique words:  80925
+Average line length in corpus is  13
+Language: ta
+Total lines:  45600
+Total words:  569163
+Unique words:  84098
+Average line length in corpus is  12
+Language: te
+Total lines:  45600
+Total words:  580038
+Unique words:  90249
+Average line length in corpus is  12
+Language: hi
+Total lines:  45600
+Total words:  795781
+Unique words:  40642
+Average line length in corpus is  17
+DEV
+Language: bn
+Total lines:  1000
+Total words:  14274
+Unique words:  4697
+Average line length in corpus is  14
+Language: en
+Total lines:  1000
+Total words:  17148
+Unique words:  4133
+Average line length in corpus is  17
+Language: mr
+Total lines:  1000
+Total words:  13193
+Unique words:  5814
+Average line length in corpus is  13
+Language: ta
+Total lines:  1000
+Total words:  12424
+Unique words:  5715
+Average line length in corpus is  12
+Language: te
+Total lines:  1000
+Total words:  12889
+Unique words:  5874
+Average line length in corpus is  12
+Language: hi
+Total lines:  1000
+Total words:  17542
+Unique words:  4523
+Average line length in corpus is  17
+TEST
+Language: bn
+Total lines:  2400
+Total words:  34317
+Unique words:  8468
+Average line length in corpus is  14
+Language: en
+Total lines:  2400
+Total words:  41333
+Unique words:  7209
+Average line length in corpus is  17
+Language: mr
+Total lines:  2400
+Total words:  31835
+Unique words:  11190
+Average line length in corpus is  13
+Language: ta
+Total lines:  2400
+Total words:  30082
+Unique words:  11067
+Average line length in corpus is  12
+Language: te
+Total lines:  2400
+Total words:  30964
+Unique words:  11594
+Average line length in corpus is  12
+Language: hi
+Total lines:  2400
+Total words:  42294
+Unique words:  7993
+Average line length in corpus is  17

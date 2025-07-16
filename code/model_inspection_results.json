@@ -1,0 +1,38 @@
+{
+  "pdec_work/checkpoints/multilingual_方案1_三语言/1/checkpoint_best.pt": {
+    "file_size_mb": 969.3876724243164,
+    "keys": [
+      "args",
+      "cfg",
+      "model",
+      "criterion",
+      "optimizer_history",
+      "task_state",
+      "extra_state",
+      "last_optimizer_state"
+    ],
+    "has_args": false,
+    "has_model": true,
+    "model_params": 118834178,
+    "epoch": "unknown",
+    "best_loss": "unknown"
+  },
+  "pdec_work/checkpoints/europarl_bidirectional/1/checkpoint_best.pt": {
+    "file_size_mb": 969.3974990844727,
+    "keys": [
+      "args",
+      "cfg",
+      "model",
+      "criterion",
+      "optimizer_history",
+      "task_state",
+      "extra_state",
+      "last_optimizer_state"
+    ],
+    "has_args": false,
+    "has_model": true,
+    "model_params": 118835714,
+    "epoch": "unknown",
+    "best_loss": "unknown"
+  }
+}

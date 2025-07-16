@@ -1,0 +1,20 @@
+This is the README for the MMCR4NLP (Multilingual Multiway Corpora Repository for NLP)
+
+There are 7 folders here, 6 of which contain the corpora and the seventh one containing all the scripts used to extract/organize the corpora.
+There are README files inside each folder containing corpora indicating statistics such as wordcount, sentence length, line count etc.
+
+1. bible: This contains the bible corpora collections including the 55 lingual as well as those grouped by language family. A train/dev/test split of N/1000/1000 lines is available. 
+2. europarl: This contains the europarl corpora collections including the 21 lingual, 10 lingual and those grouped by language family. A train/dev/test split of N/2000/2000 lines is available.
+3. iwslt2016: This contains the 3, 4 and 5 lingual corpora for the IWSLT 2016 shared task. dev and test sets are available.
+4. iwslt2017: This contains the 3 and 5 lingual corpora for the IWSLT 2017 shared task. dev and test sets are available.
+5. ted: This contains the 13 and 4 lingual corpora extracted from the TED talks corpus. A train/dev/test split of N/2000/2000 lines is available.
+6. ilci: This contains the 6 lingual ILCI corpus. dev and test sets are available.
+
+
+There is a folder called scripts which includes 3 python scripts and 1 bash script. Each script has basic documentation.
+
+1. obtain_ted_ml_corpus.py: This script can be used to extract a N lingual corpus from the corpus that can be downloaded here: 
+https://github.com/ajinkyakulkarni14/TED-Multilingual-Parallel-Corpus/tree/master/Multilingual_Parallel_Corpus
+2. extract-n-way-parallel-corpus-from-xml.py: This can be used to extract a N lingual corpus from the files containing the Bible corpus in XML form.
+3. extract_n_way_corpus_from_multiple_bilingual_corpora.py: This can be used to obtain a N lingual corpus by specifying multiple bilingual corpora.  
+4. create_splits.sh: This splits the corpus into 3 parts: train/dev/test. One can specify the number of dev and test lines. They are taken from the end of the corpus.

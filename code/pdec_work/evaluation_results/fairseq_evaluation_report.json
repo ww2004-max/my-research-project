@@ -1,0 +1,100 @@
+{
+  "evaluation_timestamp": "2025-06-15 20:39:11",
+  "evaluation_method": "Fairseq Standard Evaluation (PhasedDecoder Style)",
+  "models_evaluated": {
+    "teacher": "复现模型",
+    "student": "蒸馏模型"
+  },
+  "test_data": {
+    "language_pairs": [
+      "en-de",
+      "en-fr",
+      "de-fr"
+    ],
+    "sentences_per_pair": 5
+  },
+  "detailed_results": {
+    "teacher": {
+      "model_info": {
+        "params": 118834178,
+        "vocab_size": 50004,
+        "model_size_mb": 453.31641387939453,
+        "type": "fairseq"
+      },
+      "performance": {
+        "en-de": {
+          "bleu_score": 27.8778302258779,
+          "inference_time": 0.45648516553521273,
+          "memory_usage": 2.1,
+          "generated_sentences": 5,
+          "tokens_per_second": 219.0651691446611
+        },
+        "en-fr": {
+          "bleu_score": 30.744064352526387,
+          "inference_time": 0.43897090295258473,
+          "memory_usage": 2.1,
+          "generated_sentences": 5,
+          "tokens_per_second": 227.8055318185895
+        },
+        "de-fr": {
+          "bleu_score": 26.298329610867157,
+          "inference_time": 0.4563169625942709,
+          "memory_usage": 2.1,
+          "generated_sentences": 5,
+          "tokens_per_second": 219.14591873042835
+        }
+      },
+      "summary": {
+        "avg_bleu": 28.306741396423813,
+        "avg_inference_time": 0.45059101036068944,
+        "total_params": 118834178,
+        "model_size_mb": 453.31641387939453
+      }
+    },
+    "student": {
+      "model_info": {
+        "params": 28054612,
+        "vocab_size": 50004,
+        "model_size_mb": 107.01985168457031,
+        "d_model": 256,
+        "max_seq_len": 128,
+        "type": "distilled"
+      },
+      "performance": {
+        "en-de": {
+          "bleu_score": 26.06228076993912,
+          "inference_time": 0.12358047224911703,
+          "memory_usage": 0.6,
+          "generated_sentences": 5,
+          "tokens_per_second": 809.1893337194663
+        },
+        "en-fr": {
+          "bleu_score": 28.466018017464645,
+          "inference_time": 0.10472541081697861,
+          "memory_usage": 0.6,
+          "generated_sentences": 5,
+          "tokens_per_second": 954.8780875614143
+        },
+        "de-fr": {
+          "bleu_score": 24.28091514616989,
+          "inference_time": 0.1142681916517372,
+          "memory_usage": 0.6,
+          "generated_sentences": 5,
+          "tokens_per_second": 875.1341782390035
+        }
+      },
+      "summary": {
+        "avg_bleu": 26.269737977857886,
+        "avg_inference_time": 0.11419135823927762,
+        "total_params": 28054612,
+        "model_size_mb": 107.01985168457031
+      }
+    }
+  },
+  "comparison_metrics": {
+    "bleu_retention": 0.9280382227668468,
+    "speed_improvement": 3.945929160563244,
+    "compression_ratio": 0.23608201337497364,
+    "size_reduction": 0.7639179866250263
+  }
+}

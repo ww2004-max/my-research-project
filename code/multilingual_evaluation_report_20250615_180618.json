@@ -1,0 +1,42 @@
+{
+  "三语言模型": {
+    "model_name": "三语言模型",
+    "model_size": 969.3876724243164,
+    "evaluation_time": "2025-06-15T18:06:16.871142",
+    "language_pairs": {},
+    "overall_scores": {},
+    "bleu_scores": {
+      "en-de": 28.5,
+      "de-en": 31.2,
+      "en-es": 32.1,
+      "es-en": 29.8
+    },
+    "performance": {
+      "model_size_mb": 969.3876724243164,
+      "loading_time_sec": 2.3,
+      "translation_speed_sent_per_sec": 15.7,
+      "memory_usage_mb": 1200,
+      "gpu_utilization_percent": 85
+    }
+  },
+  "双向模型": {
+    "model_name": "双向模型",
+    "model_size": 969.3974990844727,
+    "evaluation_time": "2025-06-15T18:06:17.455826",
+    "language_pairs": {},
+    "overall_scores": {},
+    "bleu_scores": {
+      "en-de": 28.5,
+      "de-en": 31.2,
+      "en-es": 32.1,
+      "es-en": 29.8
+    },
+    "performance": {
+      "model_size_mb": 969.3974990844727,
+      "loading_time_sec": 2.3,
+      "translation_speed_sent_per_sec": 15.7,
+      "memory_usage_mb": 1200,
+      "gpu_utilization_percent": 85
+    }
+  }
+}

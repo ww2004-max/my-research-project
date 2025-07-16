@@ -1,0 +1,6 @@
+=== 双向Europarl训练日志（6个语言对） ===
+语言对: en-de, de-en, en-es, es-en, en-it, it-en
+开始时间: 2025-06-15 14:50:56
+PhasedDecoder路径: C:\Users\33491\PycharmProjects\machine\fairseq\models\PhasedDecoder
+训练数据: 6个双向语言对，约111万训练样本
+==================================================
